@@ -1,0 +1,8 @@
+{
+  "name": "LaxmiERP",
+  "description": "A premium, cloud-based management platform for digital education and smart computer institutes with seamless multi-branch administrative features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
