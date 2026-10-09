@@ -1,4 +1,4 @@
-export type Language = 'en' | 'or' | 'sbp';
+export type Language = 'en' | 'hi' | 'or' | 'sbp' | 'kor';
 
 export const translations = {
   en: {
@@ -24,6 +24,30 @@ export const translations = {
     secureData: 'Secure & Reliable',
     footerSlogan: 'Learn Today, Build Tomorrow',
     copyright: '© 2025 LaxmiERP.com. All rights reserved.',
+  },
+  hi: {
+    brand: 'लक्ष्मी ईआरपी',
+    tagline: 'डिजिटल शिक्षा और स्मार्ट कंप्यूटर संस्थान प्रबंधन प्रणाली',
+    heroTitle: 'लक्ष्मी ईआरपी के साथ अपने कंप्यूटर संस्थान को अधिक स्मार्ट तरीके से प्रबंधित करें',
+    heroDesc: 'एक सरल, सुरक्षित, क्लाउड-आधारित प्लेटफॉर्म से छात्रों, फीस, स्टाफ, शाखाओं, आय और खर्चों का प्रबंधन करें।',
+    requestDemo: 'फ्री डेमो का अनुरोध करें',
+    whatsappContact: 'व्हाट्सएप पर संपर्क करें',
+    features: 'विशेषताएं',
+    benefits: 'हमें क्यों चुनें',
+    reviews: 'समीक्षाएँ',
+    contact: 'संपर्क',
+    loginPortal: 'संस्थान पोर्टल',
+    receiptDemo: 'रसीद डेमो',
+    aiAssistant: 'एआई सहायक से पूछें',
+    studentMgmt: 'छात्र प्रबंधन',
+    feesMgmt: 'फीस प्रबंधन',
+    instantPdf: 'तत्काल पीडीएफ रसीद',
+    cloudSync: 'रियल-टाइम क्लाउड सिंक',
+    multiBranch: 'मल्टी-ब्रांच प्रबंधन',
+    incomeExpense: 'आय और व्यय',
+    secureData: 'सुरक्षित और विश्वसनीय',
+    footerSlogan: 'आज सीखें, कल का निर्माण करें',
+    copyright: '© 2025 LaxmiERP.com. सर्वाधिकार सुरक्षित।',
   },
   or: {
     brand: 'ଲକ୍ଷ୍ମୀ ଇଆରପି',
@@ -73,6 +97,30 @@ export const translations = {
     footerSlogan: 'ଆଜି ଶିଖୁନ୍, କାଲି ଗଢ଼ୁନ୍',
     copyright: '© 2025 LaxmiERP.com. ସବୁ ଅଧିକାର ସଂରକ୍ଷିତ।',
   },
+  kor: {
+    brand: 'ଲକ୍ଷ୍ମୀ ERP',
+    tagline: 'କମ୍ପୁଟର ସେଣ୍ଟର ଆଉ ଡିଜିଟାଲ ପାଠପଢ଼ା ପାଇଁ ବଢ଼ିଆ ମ୍ୟାନେଜମେଣ୍ଟ ସିଷ୍ଟମ',
+    heroTitle: 'ଲକ୍ଷ୍ମୀ ERP ସାଙ୍ଗେ ଆପଣଙ୍କର କମ୍ପୁଟର ଇନଷ୍ଟିଚ୍ୟୁଟ୍ କେ ସ୍ମାର୍ଟରେ ଚଲାନ୍ତୁ',
+    heroDesc: 'ଛାତ୍ରଛାତ୍ରୀ, ଫିସ, ଷ୍ଟାଫ୍, ବ୍ରାଞ୍ଚ୍, ଆୟ ଆଉ ଖର୍ଚ୍ଚ ସବୁକିଛି ଗୋଟେ ଜାଗାରୁ ସହଜରେ କଣ୍ଟ୍ରୋଲ କରନ୍ତୁ।',
+    requestDemo: 'ଫ୍ରି ଡେମୋ ପାଇଁ କହିବେ',
+    whatsappContact: 'ହ୍ଵାଟସଆପ୍ ରେ ମେସେଜ କରନ୍ତୁ',
+    features: 'ଫିଚର୍ସ ଗୁଡ଼ିକ',
+    benefits: 'ଆମକୁ କାଇଁକି ବାଛିବେ',
+    reviews: 'ଲୋକଙ୍କର ମତାମତ',
+    contact: 'ଯୋଗାଯୋଗ',
+    loginPortal: 'ଇନଷ୍ଟିଚ୍ୟୁଟ୍ ଲଗଇନ୍',
+    receiptDemo: 'ରସିଦ୍ ଡେମୋ',
+    aiAssistant: 'ଏଆଇ ଏଜେଣ୍ଟ ସାଙ୍ଗେ କଥା ହୁଅନ୍ତୁ',
+    studentMgmt: 'ଷ୍ଟୁଡେଣ୍ଟ ମ୍ୟାନେଜମେଣ୍ଟ',
+    feesMgmt: 'ଫିସ କଲେକ୍ସନ',
+    instantPdf: 'ତତକ୍ଷଣାତ PDF ରସିଦ୍',
+    cloudSync: 'ଲାଇଭ୍ କ୍ଲାଉଡ୍ ସିଙ୍କ୍',
+    multiBranch: 'ବହୁ-ବ୍ରାଞ୍ଚ୍ କଣ୍ଟ୍ରୋଲ୍',
+    incomeExpense: 'ଆୟ ଆଉ ଖର୍ଚ୍ଚ',
+    secureData: 'ସୁରକ୍ଷିତ ଆଉ ଭରସାଯୋଗ୍ୟ',
+    footerSlogan: 'ଆଜି ଶିଖୁବା, କାଲି ଗଢ଼ିବା',
+    copyright: '© 2025 LaxmiERP.com. ସବୁ ଅଧିକାର ସଂରକ୍ଷିତ।',
+  }
 };
 
 export const currentLanguageState = {

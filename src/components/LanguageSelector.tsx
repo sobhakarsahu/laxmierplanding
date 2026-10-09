@@ -28,8 +28,10 @@ export const LanguageSelector: React.FC = () => {
         aria-label="Select Language"
       >
         <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
         <option value="or">ଓଡ଼ିଆ (Odia)</option>
         <option value="sbp">ସମ୍ବଲପୁରୀ (Sambalpuri)</option>
+        <option value="kor">କୋରାପୁଟିଆ (Koraputia)</option>
       </select>
       <div className="absolute right-2 pointer-events-none text-sky-700 text-[10px]">
         ▼
