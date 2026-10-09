@@ -2,12 +2,22 @@ import express, { Request, Response } from 'express';
 import { createServer as createViteServer } from 'vite';
 import fs from 'fs';
 import path from 'path';
+import { GoogleGenAI } from "@google/genai";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 const isProd = process.env.NODE_ENV === 'production';
 
 app.use(express.json());
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+  httpOptions: {
+    headers: {
+      'User-Agent': 'aistudio-build',
+    }
+  }
+});
 
 // Persistent JSON storage directory
 const DATA_DIR = path.resolve(process.cwd(), 'data');
@@ -249,6 +259,37 @@ app.delete('/api/admin/reviews/:id', (req: Request, res: Response) => {
   const filtered = reviews.filter(r => r.id !== id);
   writeJson(REVIEWS_FILE, filtered);
   res.json({ success: true });
+});
+
+// AI Customer Chat Agent API
+app.post('/api/ai-chat', async (req: Request, res: Response) => {
+  try {
+    const { messages } = req.body;
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({ success: false, error: 'Messages array required' });
+    }
+
+    const formattedContents = messages.map((m: any) => ({
+      role: m.role === 'user' ? 'user' : 'model',
+      parts: [{ text: m.content }]
+    }));
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-3.8-flash',
+      contents: formattedContents,
+      config: {
+        systemInstruction: `You are the AI Customer Support Agent for LaxmiERP (laxmierp.com), a premier cloud-based Computer Institute Management System. 
+You help computer academy directors, tutors, and students with information about modules (Student Admission, Fee Collection & PDF Receipts, Attendance, Exams, Multi-Branch Management, Income & Expense, Staff Payroll, Certificate Generator).
+Be polite, professional, encouraging, and helpful. Emphasize real-time cloud sync, instant PDF receipts, and ease of use. If asked about pricing or demos, encourage them to request a free demo or contact via WhatsApp.`,
+        temperature: 0.7,
+      },
+    });
+
+    res.json({ success: true, reply: response.text || "Hello! How can I assist you with LaxmiERP today?" });
+  } catch (error: any) {
+    console.error('AI Chat Error:', error);
+    res.status(500).json({ success: false, error: error.message || 'AI assistant is temporarily busy.' });
+  }
 });
 
 // Vite middleware or static assets

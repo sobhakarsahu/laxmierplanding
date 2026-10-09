@@ -9,6 +9,7 @@ import {
   FileText,
   ShieldCheck
 } from 'lucide-react';
+import { LanguageSelector } from './LanguageSelector';
 
 interface NavbarProps {
   onOpenLogin: () => void;
@@ -98,6 +99,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSelector />
+
             <button
               onClick={onOpenReceiptDemo}
               className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-sky-700 bg-sky-50 hover:bg-sky-100 rounded-lg border border-sky-200 transition-colors"
@@ -146,6 +149,10 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-sky-100 shadow-xl px-4 pt-3 pb-6 animate-in slide-in-from-top-2 duration-200">
+          <div className="flex items-center justify-between px-3 py-2 mb-2 bg-sky-50 rounded-xl border border-sky-200">
+            <span className="text-xs font-bold text-slate-700">Select Language:</span>
+            <LanguageSelector />
+          </div>
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <button

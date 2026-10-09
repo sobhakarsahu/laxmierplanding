@@ -16,6 +16,7 @@ import { PrivacyPolicyModal, TermsModal, QuickConfigModal } from './components/L
 import { StorageService } from './services/storage';
 import { ContactConfig } from './types';
 import { AlertTriangle, Home } from 'lucide-react';
+import { AICustomerChat } from './components/AICustomerChat';
 
 export default function App() {
   const [config, setConfig] = useState<ContactConfig>(StorageService.getConfig());
@@ -167,6 +168,9 @@ export default function App() {
         onOpenConfig={() => setIsConfigOpen(true)}
         onRequestDemo={() => handleNavigate('demo')}
       />
+
+      {/* AI Customer Chat Agent Widget */}
+      <AICustomerChat />
 
       {/* Interactive PDF Receipt Generator Simulator */}
       <ReceiptDemoModal
