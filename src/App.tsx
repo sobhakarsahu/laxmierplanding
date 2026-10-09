@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { SpiritualBannerHero } from './components/SpiritualBannerHero';
 import { FeaturesSection } from './components/FeaturesSection';
+import { InstituteShowcase } from './components/InstituteShowcase';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { DemoRequestSection } from './components/DemoRequestSection';
@@ -119,6 +120,11 @@ export default function App() {
         {/* 10 Core ERP Features Grid */}
         <FeaturesSection
           onOpenReceiptDemo={() => setIsReceiptDemoOpen(true)}
+          onRequestDemo={() => handleNavigate('demo')}
+        />
+
+        {/* Professional Institute Showcase with High-End Photography */}
+        <InstituteShowcase
           onRequestDemo={() => handleNavigate('demo')}
         />
 
